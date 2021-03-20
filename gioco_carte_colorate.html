@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragNDrop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/mioscript.js"></script>
+</head>
+
+<body id="body">
+
+    <div class="riga">
+        <div class="cella_header">
+            <img class="icons" src="./images/home-1.png" onclick="setup_game()"></img>
+        </div>
+        <div class="cella_header">
+            <img class="icons" src="./images/route.png"></img>
+            <div id="pezzi_mancanti">6</div>
+        </div>
+        <div class="cella_header">
+            <img class="icons" src="./images/garbage-1.png"></img>
+            <div id="errori_mancanti">2</div>
+        </div>
+    </div>
+
+    <div class="riga">
+        <div class="destinazione rosso" id="dest_rosso" amount="10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="destinazione blu" id="dest_blu" amount="20" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="destinazione verde" id="dest_verde" amount="30" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="riga">
+        <div class="origine rosso" id="origine_q_rosso" amount="10" draggable="true" ondragstart="drag(event)"></div>
+        <div class="origine blu" id="origine_q_blu" amount="20" draggable="true" ondragstart="drag(event)"></div>
+        <div class="origine verde" id="origine_q_verde" amount="30" draggable="true" ondragstart="drag(event)"></div>
+    </div>
+    <div class="riga">
+        <div class="origine cerchio rosso" id="origine_c_rosso" amount="10" draggable="true" ondragstart="drag(event)"></div>
+        <div class="origine cerchio blu" id="origine_c_blu" amount="20" draggable="true" ondragstart="drag(event)"></div>
+        <div class="origine cerchio verde" id="origine_c_verde" amount="30" draggable="true" ondragstart="drag(event)"></div>
+    </div>
+    <div class="riga">
+        <img class="final_image" id="final_image"></img>
+    </div>
+
+
+    <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons ">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon ">www.flaticon.com</a></div> -->
+
+
+
+
+
+</body>
+
+</html>

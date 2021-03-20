@@ -1,8 +1,9 @@
 .destinazione {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     padding: 10px;
     border: 1px solid #aaaaaa;
+    display: inline-block;
     margin: 10px;
 }
 
@@ -25,6 +26,31 @@
     background-color: green;
 }
 
+.nero {
+    background-color: black;
+}
+
 .cerchio {
     border-radius: 50%;
+}
+
+.icons {
+    width: 50px;
+    height: 50px;
+}
+
+.final_image {
+    width: 500px;
+    height: 300px;
+}
+
+.menu_entry {
+    width: 500px;
+    height: 300px;
+}
+
+.cella_header {
+    display: inline-block;
+    font-size: 30px;
+    margin: 50px;
 }

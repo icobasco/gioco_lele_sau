@@ -30,6 +30,9 @@ const caricaFoto = () => {
 let giusti = 0;
 let errori = 0;
 
+let errori_mancanti = 2;
+let pezzi_mancanti = 6;
+
 let check_amount = 0;
 
 let quadrato_id = "";
@@ -41,6 +44,10 @@ let ok_sound_wav = "./sounds/mixkit-unlock-game-notification-253.wav";
 /* TODO: clicco su rosso, vale 100, dove lascio deve valere meno 100. Se risultato è 0, allora
     è giusto, altrimenti no
 */
+
+const setup_game = () => {
+    location.reload();
+}
 
 const allowDrop = (ev) => {
     ev.preventDefault();
@@ -74,11 +81,43 @@ const drop = (ev) => {
         var source_id = ev.dataTransfer.getData("source_id");
         ev.target.appendChild(document.getElementById(source_id));
         sound_player.src = ok_sound_wav;
+        pezzi_mancanti--;
+        check_win();
     } else {
         console.log("KO");
         sound_player.src = error_sound_wav;
+        errori_mancanti--;
+        check_errori();
     }
     sound_player.play();
 
 
+}
+
+const check_errori = () => {
+    let errori_mancanti_html = document.getElementById("errori_mancanti");
+    errori_mancanti_html.innerHTML = errori_mancanti;
+    console.log("Ancora " + errori_mancanti + " errori ammessi.");
+    if (errori_mancanti <= 0) {
+        you_lose();
+    }
+}
+
+const check_win = () => {
+    let pezzi_mancanti_html = document.getElementById("pezzi_mancanti");
+    pezzi_mancanti_html.innerHTML = pezzi_mancanti;
+    console.log("Mancano " + pezzi_mancanti + " pezzi.");
+    if (pezzi_mancanti <= 0) {
+        you_win();
+    }
+}
+
+const you_lose = () => {
+    let img = document.getElementById("final_image");
+    img.src = "./images/hai_perso.bmp";
+}
+
+const you_win = () => {
+    let img = document.getElementById("final_image");
+    img.src = "./images/hai_vinto.bmp";
 }
