@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragNDrop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/mioscript.js"></script>
+</head>
+
+<body>
+
+    <!-- <input type="button" value="CARICA BUTTON" onclick="carica(event)">
+    <br>
+    <input type="button" value="CARICA FOTO" onclick="caricaFoto()"> -->
+
+
+
+
+    <div class="destinazione rosso" id="dest_rosso" amount="10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="destinazione blu" id="dest_blu" amount="20" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="destinazione verde" id="dest_verde" amount="30" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div class="origine rosso" id="origine_q_rosso" amount="10" draggable="true" ondragstart="drag(event)"></div>
+    <div class="origine blu" id="origine_q_blu" amount="20" draggable="true" ondragstart="drag(event)"></div>
+    <div class="origine verde" id="origine_q_verde" amount="30" draggable="true" ondragstart="drag(event)"></div>
+
+    <div class="origine cerchio rosso" id="origine_c_rosso" amount="10" draggable="true" ondragstart="drag(event)"></div>
+    <div class="origine cerchio blu" id="origine_c_blu" amount="20" draggable="true" ondragstart="drag(event)"></div>
+    <div class="origine cerchio verde" id="origine_q_verde" amount="30" draggable="true" ondragstart="drag(event)"></div>
+
+
+
+</body>
+
+</html>
